@@ -1,0 +1,30 @@
+{{ formGroup.get('username')?.errors | json }}
+<form [formGroup]="formGroup"
+      (ngSubmit)="onSubmit()"
+>
+  <div>
+    <div>
+      <label>
+        username:
+      </label>
+
+      <input type="text" formControlName="username">
+      <p *ngIf="formGroup.get('username')?.errors?.required">
+        Value required
+      </p>
+    </div>
+
+    <div>
+      <label> password: </label>
+      <input type="password" formControlName="password">
+      <p *ngIf="formGroup.get('password')?.errors?.required">
+        Value required
+      </p>
+    </div>
+    <div>
+      <button type="submit">
+        Logar
+      </button>
+    </div>
+  </div>
+</form>
