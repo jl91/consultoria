@@ -1,19 +1,22 @@
 import {Injectable} from '@angular/core';
-import {Observable, of, timer} from 'rxjs';
+import {Observable} from 'rxjs';
 import {User} from '../model/user.model';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class LoginHttpService {
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
   public login(username: string, password: string): Observable<User> {
-    return of({
-      id: 1,
-      username,
-      password
-    });
+    return this.httpClient
+      .get('/assets/rest/response.json')
+      .pipe(map((response: any) => {
+        console.log(response);
+        return response as User;
+      }));
   }
 
 
