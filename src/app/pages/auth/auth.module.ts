@@ -1,12 +1,15 @@
 import {NgModule} from '@angular/core';
-import {LoginModule} from "./login/login.module";
+import {LoginModule} from './login/login.module';
+import {RecoveryPasswordModule} from './recovery-password/recovery-password.module';
 
 @NgModule({
   imports: [
-    LoginModule
+    LoginModule,
+    RecoveryPasswordModule
   ],
   exports: [
-    LoginModule
+    LoginModule,
+    RecoveryPasswordModule
   ],
   declarations: [],
   providers: [],
