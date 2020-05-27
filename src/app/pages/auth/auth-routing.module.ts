@@ -1,8 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {RecoveryPasswordComponent} from './recovery-password.component';
+import {LoginComponent} from "./login/login.component";
+import {RecoveryPasswordComponent} from "./recovery-password/recovery-password.component";
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'recovery-password',
     component: RecoveryPasswordComponent
@@ -14,5 +23,5 @@ const routes: Routes = [
   exports: [],
   declarations: [],
 })
-export class RecoveryPasswordRoutingModule {
+export class AuthRoutingModule {
 }
